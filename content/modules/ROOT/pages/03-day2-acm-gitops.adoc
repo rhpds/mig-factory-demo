@@ -1,0 +1,181 @@
+= Deploying VMS with RHACM and GitOps
+
+In this module, we will demonstrate how to deploy a virtual machine using Advanced Cluster Management (ACM) on a ROSA (Red Hat OpenShift Service on AWS) hosted control plane managed cluster with a bare metal instance running OpenShift Virtualization.
+
+*SAY:*
+
+In this demo, we will use ACM to deploy a RHEL 9 virtual machine on a ROSA hosted control plane managed cluster that includes a bare metal instance running OpenShift Virtualization.
+
+== Overview of ACM and ROSA Cluster
+
+*DO:*
+
+. Navigate to the link:{openshift_web_console}/multicloud/home/overview[ACM Console^]
+
+*SAY:*
+
+In the screenshot, you can see ACM, which provides a centralized view of our clusters.
+We can have several clusters across different providers and infrastructures.
+
+image::module-03/acm_overview.png[link=self, window=blank, width=80%]
+
+*DO:*
+
+. Click on the *ROSA cluster* to view its details.
+. Navigate to the *Nodes* tab.
+
+*SAY:*
+
+Here, we can see information about the ROSA cluster, including its nodes.
+This particular cluster has a bare metal node.
+
+*DO:*
+
+. Switch to the ROSA cluster view and navigate to the *Compute* section.
+. Highlight the bare metal node and the `openshift-cnv` namespace.
+
+*SAY:*
+
+Within the ROSA cluster, we can see the bare metal node and the various pods in the `openshift-cnv` namespace.
+This is where all OpenShift Virtualization and host provisioning pods are running.
+
+== Existing Virtual Machines
+
+*DO:*
+
+. Click on the *Virtualization* tab in the ROSA console.
+. Highlight the existing VMs.
+
+*SAY:*
+
+Here, we have an existing VM that has been running for a few days.
+They could have been imported manually with MTV or automatically with the Ansible Automation Platform.
+
+== Automating VM Deployment with ACM
+
+*SAY:*
+
+Today, we will reproduce the VM deployment experience using ACM and the application engine for a more GitOps-based approach.
+
+*DO:*
+
+. Navigate to the *Applications* section in the ACM console.
+. Highlight the deployed applications, focusing on those using the GitOps model.
+
+*SAY:*
+
+In the screenshot, you can see a couple of applications deployed using the GitOps model.
+This approach allows for easy troubleshooting through the topology view.
+
+image::module-03/acm_applications.png[link=self, window=blank, width=80%]
+
+== Creating a New Application with ACM
+
+*DO:*
+
+. Click on *Create Application*.
+. Select *Application Set* and choose the *Pull model* with Argo CD (OpenShift GitOps).
+. Enter the name for the application, select the GitOps Argo Server, and click *Next*.
+
+*SAY:*
+
+We will create a new application set using Argo CD for this deployment.
+First, we name our application, select the GitOps Argo Server, and proceed.
+
+*DO:*
+
+. Select *Git* for the Repo Type.
+. Enter the URL of the GitHub repository containing the VM configuration.
+
+*SAY:*
+
+This repository, forked from engineering, is dedicated to GitOps with OpenShift Virtualization.
+The key element we need is the VM configuration URL.
+
+image::module-03/git_repo_url.png[link=self, window=blank, width=80%]
+
+== Configuring the Application
+
+*DO:*
+
+. Paste the following repository *URL*:
++
+{rhacm_gitops_repo}
+. Select the *Revision* `main` and *Path* `vms`.
+. Specify the target namespace as `openshift-cnv`.
+. Add label expression `name` | `equals any of` | `local-cluster`.
+
+*SAY:*
+
+We configure the application to deploy into the `openshift-cnv` namespace and place it appropriately into a managed OpenShift cluster.
+For this demo, we'll use the ROSA hosted control plane cluster.
+
+*DO:*
+
+. Click *Submit* to create the application.
+
+*SAY:*
+
+With the configuration set, we submit the application and observe the deployment process.
+
+== Observing the Deployment
+
+*DO:*
+
+. Switch to the ROSA console to monitor the VM deployment.
+. Highlight the VM status as it starts to come up.
+
+*SAY:*
+
+On the ROSA console, we can see the VM starting to come up and eventually running.
+ACM shows the application in a pending state initially, but it will soon reflect the running state.
+
+*DO:*
+
+. Switch to the ACM topology view to check the application status.
+
+*SAY:*
+
+In the ACM topology view, we can see the VM deployment progress. Once everything is green, the VM is deployed correctly.
+This view allows us to manage and troubleshoot the application easily.
+
+== GitOps Resiliency
+
+*SAY:*
+
+One of the benefits of deploying VMs as code with GitOps is built-in redundancy.
+If someone deletes the VM from the ROSA console, ACM will automatically recreate it, ensuring the application remains consistent.
+
+== Using ACM for Monitoring and Troubleshooting
+
+*DO:*
+
+. Navigate to the *Search* screen in ACM.
+. Demonstrate searching for specific VM resources.
+
+*SAY:*
+
+ACM provides powerful search capabilities to look at specific VM resources, related resources, and overall cluster health.
+This is especially useful for monitoring and troubleshooting.
+
+*DO:*
+
+. Switch to the *Observability* screen in ACM.
+. Highlight Grafana dashboards for VM metrics.
+
+*SAY:*
+
+The observability features in ACM, integrated with Grafana, allow us to monitor the performance and health of our VMs and other resources effectively.
+
+== Summary
+
+*SAY:*
+
+In this module, we used ACM to deploy a VM on a ROSA hosted control plane managed cluster, leveraging GitOps for automation.
+This approach provides speed, scale, and consistency while simplifying the management of VMs.
+
+By using ACM and GitOps, we ensure that our VMs are deployed and managed efficiently, with built-in redundancy and robust monitoring capabilities.
+
+*DO:*
+
+NOTE: Please delete this demo from the Red Hat Demo Platform once you have completed practicing or delivering it to your customer.

@@ -24,3 +24,4 @@ asciidoc:
     ssh_user: placeholder_ssh_username
     ssh_password: placeholder_ssh_password
     ssh_command: ssh placeholder@example.com
+    rhacm_gitops_repo: \https://github.com/jalvarez-rh/kubevirt-gitops.git
