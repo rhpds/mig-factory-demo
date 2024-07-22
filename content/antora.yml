@@ -1,6 +1,6 @@
 ---
 name: modules
-title: OpenShift Virtualization Migration Demo
+title: OpenShift Virtualization Demo
 version: master
 nav:
   - modules/ROOT/nav.adoc
@@ -17,7 +17,7 @@ asciidoc:
     aap_controller_web_url: placeholder_aap_controller_web_url
     aap_controller_admin_user: placeholder_aap_controller_admin_user
     aap_controller_admin_password: placehoder_aap_controller_admin_password
-    lab_name: "OpenShift Virtualization Migration Demo"
+    lab_name: "OpenShift Virtualization Demo"
     release-version: master
     page-pagination: true
     guid: my-guid
