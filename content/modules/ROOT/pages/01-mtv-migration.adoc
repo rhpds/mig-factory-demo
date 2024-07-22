@@ -37,14 +37,14 @@ We cannot migrate a virtual machine twice; mac addresses are not unique.
 
 . Navigate to the https://{vcenter_console}[vCenter Console^]
 +
-image::module-01/NN_Launch_vSphere.png[link=self, window=blank, width=30%]
+image::vsphere-launch.png[link=self, window=blank, width=30%]
 +
 . If necesary, click *LAUNCH VSPHERE CLIENT*
 . Login with the following credentials:
 * *User:* {vcenter_full_user}
 * *Password:* {vcenter_password}
 +
-image::module-01/NN_vSphere_Login.png[link=self, window=blank, width=30%]
+image::vsphere-login.png[link=self, window=blank, width=30%]
 
 . By default, you'll land in the *Inventory* view at the top of the navigation tree.
 Click the *Workloads* icon and expand the navigation tree until you see the folder that matches your username and the four VMs under it.

@@ -10,7 +10,14 @@ In this demo, we will use ACM to deploy a RHEL 9 virtual machine on a ROSA with 
 
 *DO:*
 
-. Navigate to the link:{openshift_web_console}/multicloud/home/overview[ACM Console^]
+. Navigate to the link:{openshift_cluster_console_url}/multicloud/home/overview[ACM Console^].
+. Login with the following credentials with Cognito:
++
+image::module-03/NN_Launch_vSphere.png[link=self, window=blank, width=30%]
++
+* *User:* {vcenter_full_user}
+* *Password:* {vcenter_password}
+
 
 *SAY:*
 
