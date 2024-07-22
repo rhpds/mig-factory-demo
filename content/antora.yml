@@ -1,27 +1,20 @@
 ---
 name: modules
 title: OpenShift Virtualization Demo
-version: master
+version: main
 nav:
   - modules/ROOT/nav.adoc
 
 asciidoc:
   attributes:
-    openshift_admin_password: placehoder_openshift_admin_password
-    openshift_admin_user: placehoder_openshift_admin_user
-    openshift_web_console: placehoder_openshift_web_console
+    openshift_cluster_admin_password: placeholder_openshift_cluster_admin_password
+    openshift_cluster_admin_username: placeholder_openshift_cluster_admin_username
+    openshift_cluster_console_url: https://placeholder_openshift_cluster_console_url
     vcenter_console: placehoder_vcenter_console
     vcenter_password: placehoder_vcenter_password
     vcenter_user: placehoder_vcenter_user
     vcenter_full_user: placeholder_vcenter_user
-    aap_controller_web_url: placeholder_aap_controller_web_url
+    aap_controller_web_url: https://placeholder_aap_controller_web_url
     aap_controller_admin_user: placeholder_aap_controller_admin_user
     aap_controller_admin_password: placehoder_aap_controller_admin_password
-    lab_name: "OpenShift Virtualization Demo"
-    release-version: master
-    page-pagination: true
-    guid: my-guid
-    ssh_user: placeholder_ssh_username
-    ssh_password: placeholder_ssh_password
-    ssh_command: ssh placeholder@example.com
     rhacm_gitops_repo: \https://github.com/jalvarez-rh/kubevirt-gitops.git

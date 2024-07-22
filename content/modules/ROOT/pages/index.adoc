@@ -1,4 +1,3 @@
-:openshift_web_console: https://console-openshift-console.apps.nl222.dynamic.redhatworkshops.io
 = OpenShift Virtualization Migration Demo
 
 This demo is geared for VMware administrators.
