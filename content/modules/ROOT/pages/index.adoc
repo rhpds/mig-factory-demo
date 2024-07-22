@@ -11,7 +11,7 @@ For example, avoid the use of the term *Pod*, as it can be confusing to VMware a
 2. xref:02-ansible-migration.adoc[VM Migration with the Ansible Automation Platform]
 3. xref:03-day2-operations.adoc[Day 2 Operations]
 
-Feel free to deliver both parts or choose the one that best fits your audience.
+Feel free to deliver all parts or choose the one that best fits your audience.
 
 == Setting Up Your Environment
 

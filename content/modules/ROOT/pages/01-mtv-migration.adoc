@@ -81,7 +81,12 @@ Let's have a look at them now.
 
 *DO:*
 
-. Navigate to the link:{openshift_cluster_console_url}[OpenShift Console^] and click *Migration* -> *Providers for virtualization*
+. Navigate to the link:{openshift_cluster_console_url}[OpenShift Console^].
+. Select *local-cluster* from the *All Clusters* menu at the top.
++
+image::ocp-local-cluster.png[link=self, window=blank, width=70%]
++
+. Go to *Migration* -> *Providers for virtualization*
 
 image::module-01/NN_Migration_Providers.png[link=self, window=blank, width=80%]
 
