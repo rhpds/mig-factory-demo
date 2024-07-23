@@ -92,7 +92,7 @@ The observability features in ACM, integrated with Grafana, allow us to monitor 
 
 *SAY:*
 
-In this modulee, we demonstrated the centralized view and management capabilities of ACM, observed the deployment and monitoring of VMs, and highlighted the observability features that ensure the health and performance of our virtual machines.
+In this module, we demonstrated the centralized view and management capabilities of ACM, observed the deployment and monitoring of VMs, and highlighted the observability features that ensure the health and performance of our virtual machines.
 
 By leveraging ACM, we can efficiently manage and scale our VM deployments across different infrastructures, ensuring consistency and reducing the potential for human error.
 
