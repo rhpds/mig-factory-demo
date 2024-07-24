@@ -64,35 +64,74 @@ image::module-03/ocp-virtualization-vms.png[link=self, window=blank, width=80%]
 
 *SAY:*
 
-Here, we have existing VMs that have been running.
-They could have been imported manually with MTV or automatically with the Ansible Automation Platform.
+The search engine within Red Hat Advanced Cluster Management for Kubernetes enables rapid troubleshooting and resource discovery across your Kubernetes clusters, including virtual machines, by providing a centralized and powerful search capability. With this feature, users can quickly locate specific resources, such as pods, nodes, and VMs, by using intuitive search queries and filters. This streamlined search functionality reduces the complexity of navigating large, multi-cluster environments, allowing administrators to efficiently identify and address issues, optimize resource usage, and maintain a robust and well-managed Kubernetes infrastructure.
+
+Let's showcase how the Search engine operates in ACM.
 
 == Using ACM for Monitoring and Troubleshooting
 
 *DO:*
 
 . Navigate to the *Search* screen in ACM.
-. Demonstrate searching for specific VM resources.
+. Setup the following filters in your search *kind:VirtualMachine* 
+
+image::module-03/acm-search-vms.png[link=self, window=blank, width=80%]
+
+. You should see the Virtual Machines you imported in the earlier steps, let's navigate deeper. Click on the *winweb01* 
+
+image::module-03/acm-search-vms1.png[link=self, window=blank, width=80%]
+
+. Notice all of the details of the Virtual Machine, here we can see when it was created, what Labels are appiled, what features of this virtual machine are enabled. If you navigate to the YAML tab you can see all of the details of the machine as Code, you can use this to deploy VMs as code from within ACM, making it super easy to scale out your environment.
+
+image::module-03/acm-search-vms2.png[link=self, window=blank, width=80%]
+
+. Navigate to the Related Resources tab to showcase all of the resources that are associated with the *winweb01* virtual machine, this allows for easy troubleshooting when issues come up
+
+image::module-03/acm-search-vms3.png[link=self, window=blank, width=80%]
+
+. Feel free to explore around the search engine with other qureies, they are all simple text based.
 
 *SAY:*
 
-ACM provides powerful search capabilities to look at specific VM resources, related resources, and overall cluster health.
-This is especially useful for monitoring and troubleshooting.
+. ACM provides powerful search capabilities to look at specific VM resources, related resources, and overall cluster health. This is especially useful for monitoring and troubleshooting, now let's dive deeper into Observability and showcase how we can monitor and alert on resources as needed.
+
 
 *DO:*
 
-. Switch to the *Observability* screen in ACM.
-. Highlight Grafana dashboards for VM metrics.
+. Navigate to the main ACM page and click on the *Grafana link* right below the search icon in ACM.
+
+image::module-03/observability-Overview.png[link=self, window=blank, width=80%]
+
+. Click on the *local-cluster* under the *Top 50 Max Latency API Server* 
+
+image::module-03/acm-observe-dash.png[link=self, window=blank, width=80%]
+
+. Notice the amount of information thats avaiable here from our cluster APIs, you can see what the top Requests are, and how many resources they consumed, by CPU, memory and much more. You can configure alerts from Grafana to be forward to any system that you might currently use for further monitoring and troubleshooting.
+
+. Let's have a look at the workloads inside our cluster like Virtual Machines, let's Navigate to the side bar and click on *Browse* 
+
+image::module-03/acm-observe-dash1.png[link=self, window=blank, width=80%]
+
+. Once there notice all of the out of the box dashboards that are available. Custom dashboards can also be created and configure. Let's dive deeper into these dashboards and select the *ACM - OpenShift Virtualization Overview*  
+
+image::module-03/acm-observe-dash2.png[link=self, window=blank, width=80%]
+
+. This Dashboard showcases the Health of the *OpenShift Virtualization Operator* - kubevirt - and what resources - virtual machines - are available and and what the state is.
+
+image::module-03/acm-observe-dash3.png[link=self, window=blank, width=80%]
+
+. Feel free to explore around the multiple Grafana dashboards to familiarize yourself with whats included out of the box. 
+
 
 *SAY:*
 
-The observability features in ACM, integrated with Grafana, allow us to monitor the performance and health of our VMs and other resources effectively.
+. The Observability feature in Red Hat Advanced Cluster Management for Kubernetes enhances cluster resource management by providing comprehensive visibility into the health, performance, and utilization of cluster resources. By integrating with Grafana, it offers real-time monitoring and detailed dashboards that display key metrics for nodes, pods, and applications. This allows administrators to identify and address performance bottlenecks, optimize resource allocation, and ensure efficient operation of the clusters. The ability to set up alerts and analyze historical data further aids in proactive management, enabling better planning and timely resolution of potential issues, ultimately leading to a more resilient and well-optimized Kubernetes environment.
 
 == Summary
 
 *SAY:*
 
-In this module, we demonstrated the centralized view and management capabilities of ACM, observed the deployment and monitoring of VMs, and highlighted the observability features that ensure the health and performance of our virtual machines.
+. In this module, we demonstrated the centralized view and management capabilities of ACM, observed the deployment and monitoring of VMs, and highlighted the observability features that ensure the health and performance of our virtual machines.
 
 By leveraging ACM, we can efficiently manage and scale our VM deployments across different infrastructures, ensuring consistency and reducing the potential for human error.
 
