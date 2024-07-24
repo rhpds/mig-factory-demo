@@ -81,7 +81,7 @@ image::module-03/acm-search-vms.png[link=self, window=blank, width=80%]
 
 image::module-03/acm-search-vms1.png[link=self, window=blank, width=80%]
 
-. Notice all of the details of the Virtual Machine, here we can see when it was created, what Labels are appiled, what features of this virtual machine are enabled. If you navigate to the YAML tab you can see all of the details of the machine as Code, you can use this to deploy VMs as code from within ACM, making it super easy to scale out your environment.
+Notice all of the details of the Virtual Machine, here we can see when it was created, what Labels are appiled, what features of this virtual machine are enabled. If you navigate to the YAML tab you can see all of the details of the machine as Code, you can use this to deploy VMs as code from within ACM, making it super easy to scale out your environment.
 
 image::module-03/acm-search-vms2.png[link=self, window=blank, width=80%]
 
@@ -93,7 +93,7 @@ image::module-03/acm-search-vms3.png[link=self, window=blank, width=80%]
 
 *SAY:*
 
-. ACM provides powerful search capabilities to look at specific VM resources, related resources, and overall cluster health. This is especially useful for monitoring and troubleshooting, now let's dive deeper into Observability and showcase how we can monitor and alert on resources as needed.
+ACM provides powerful search capabilities to look at specific VM resources, related resources, and overall cluster health. This is especially useful for monitoring and troubleshooting, now let's dive deeper into Observability and showcase how we can monitor and alert on resources as needed.
 
 
 *DO:*
@@ -120,18 +120,18 @@ image::module-03/acm-observe-dash2.png[link=self, window=blank, width=80%]
 
 image::module-03/acm-observe-dash3.png[link=self, window=blank, width=80%]
 
-. Feel free to explore around the multiple Grafana dashboards to familiarize yourself with whats included out of the box. 
+Feel free to explore around the multiple Grafana dashboards to familiarize yourself with whats included out of the box. 
 
 
 *SAY:*
 
-. The Observability feature in Red Hat Advanced Cluster Management for Kubernetes enhances cluster resource management by providing comprehensive visibility into the health, performance, and utilization of cluster resources. By integrating with Grafana, it offers real-time monitoring and detailed dashboards that display key metrics for nodes, pods, and applications. This allows administrators to identify and address performance bottlenecks, optimize resource allocation, and ensure efficient operation of the clusters. The ability to set up alerts and analyze historical data further aids in proactive management, enabling better planning and timely resolution of potential issues, ultimately leading to a more resilient and well-optimized Kubernetes environment.
+The Observability feature in Red Hat Advanced Cluster Management for Kubernetes enhances cluster resource management by providing comprehensive visibility into the health, performance, and utilization of cluster resources. By integrating with Grafana, it offers real-time monitoring and detailed dashboards that display key metrics for nodes, pods, and applications. This allows administrators to identify and address performance bottlenecks, optimize resource allocation, and ensure efficient operation of the clusters. The ability to set up alerts and analyze historical data further aids in proactive management, enabling better planning and timely resolution of potential issues, ultimately leading to a more resilient and well-optimized Kubernetes environment.
 
 == Summary
 
 *SAY:*
 
-. In this module, we demonstrated the centralized view and management capabilities of ACM, observed the deployment and monitoring of VMs, and highlighted the observability features that ensure the health and performance of our virtual machines.
+In this module, we demonstrated the centralized view and management capabilities of ACM, observed the deployment and monitoring of VMs, and highlighted the observability features that ensure the health and performance of our virtual machines.
 
 By leveraging ACM, we can efficiently manage and scale our VM deployments across different infrastructures, ensuring consistency and reducing the potential for human error.
 
