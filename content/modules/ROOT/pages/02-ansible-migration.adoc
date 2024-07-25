@@ -141,6 +141,4 @@ The combination of these can be used to move many types of workloads into and wi
 
 For more information about these other migration toolkits, please reach out to your Red Hat account team.
 
-*DO:*
-
 NOTE: Please delete this demo from the Red Hat Demo Platform as soon as you have completed practicing or delivering the demo to your customer.

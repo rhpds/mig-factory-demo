@@ -314,3 +314,5 @@ image::module-01/NN_VM_Migrated_Application.png[link=self, window=blank, width=7
 *SAY:*
 
 In this segment of the demo, we used the Migration Toolkit for Virtualization to assist with the migration of existing virtual machines from a VMware vSphere environment to OpenShift Virtualization.
+
+NOTE: Please delete this demo from the Red Hat Demo Platform once you have completed practicing or delivering it to your customer.
