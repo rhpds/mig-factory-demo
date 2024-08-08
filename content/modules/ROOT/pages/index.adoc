@@ -31,16 +31,15 @@ image::vsphere-launch.png[link=self, window=blank, width=30%]
 +
 image::vsphere-login.png[link=self, window=blank, width=30%]
 
-. Navigate to the link:{openshift_cluster_console_url}[OpenShift Console^]
-. Login with *Cognito*
+. Navigate to the link:{rosa_openshift_console_url}[OpenShift Console^]
 +
-image::ocp-login-cognito.png[link=self, window=blank, width=50%]
+image::ocp-login.png[link=self, window=blank, width=50%]
 +
 image::module-01/NN_Virtualization_Console_Login.png[link=self, window=blank, width=30%]
 +
-*Username:* {openshift_cluster_admin_username}
+*Username:* {rosa_openshift_admin_user}
 +
-*Password:* {openshift_cluster_admin_password}
+*Password:* {rosa_openshift_admin_password}
 
 . Navigate to the link:{aap_controller_web_url}[AAP Controller^]
 +
