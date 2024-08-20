@@ -7,9 +7,9 @@ nav:
 
 asciidoc:
   attributes:
-    openshift_cluster_admin_password: placeholder_openshift_cluster_admin_password
-    openshift_cluster_admin_username: placeholder_openshift_cluster_admin_username
-    openshift_cluster_console_url: https://placeholder_openshift_cluster_console_url
+    rosa_openshift_admin_password: placeholder_rosa_openshift_admin_password
+    rosa_openshift_admin_user: placeholder_rosa_openshift_admin_user
+    rosa_openshift_console_url: https://placeholder_rosa_openshift_console_url
     vcenter_console: placehoder_vcenter_console
     vcenter_password: placehoder_vcenter_password
     vcenter_user: placehoder_vcenter_user
