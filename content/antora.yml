@@ -18,3 +18,4 @@ asciidoc:
     aap_controller_admin_user: placeholder_aap_controller_admin_user
     aap_controller_admin_password: placehoder_aap_controller_admin_password
     rhacm_gitops_repo: \https://github.com/jalvarez-rh/kubevirt-gitops.git
+    guid: placeholder_guid

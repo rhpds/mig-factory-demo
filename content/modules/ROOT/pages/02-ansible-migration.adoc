@@ -59,7 +59,7 @@ Prepopulated here are the *Name of your provider?* which might be one of several
 
 The *Name of your migration plan*, *storage mapping*, and *network mapping* have been given defaults that you are encouraged to change.
 
-WARNING: We need to choose a VM that has not been migrated yet. In the first module, we manually migrated the `database` and `winweb01` machines. So here, we will migrate the remaining VM: *winweb02*.
+WARNING: We need to choose a VM that has not been migrated yet. In the first module, we manually migrated the `database-{guid}` and `winweb01-{guid}` machines. So here, we will migrate the remaining VM: *winweb02-{guid}*.
 
 image::module-02/01_ansible_migration_template_survey.png[]
 
@@ -68,7 +68,7 @@ image::module-02/01_ansible_migration_template_survey.png[]
 . Enter the name of the VM you would like to migrate into the Ansible survey.
 +
 ----
-winweb02
+winweb02-{guid}
 ----
 
 . Click *Next* to continue.
@@ -118,7 +118,7 @@ The migration has been been started for us, as well.
 
 *SAY:*
 
-Ansible Automation Platform has started the VM migration plan, and the `winweb02` VM migration commences.
+Ansible Automation Platform has started the VM migration plan, and the `winweb02-{guid}` VM migration commences.
 
 If you prefer, you can setup the Ansible job to only prepare the migration process, and rely on you to click the *Start* button.
 

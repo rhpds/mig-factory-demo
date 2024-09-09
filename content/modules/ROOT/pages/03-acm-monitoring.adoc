@@ -80,7 +80,7 @@ Let's showcase how the Search engine operates in ACM.
 . Navigate to the *Search* screen in ACM.
 . Setup the following filters in your search *kind:VirtualMachine*.
 . You should see the Virtual Machines, including those you imported in the earlier steps (if applicable).
-. Let's navigate deeper. Click on the *winweb01*.
+. Let's navigate deeper. Click on the *winweb01-{guid}*.
 +
 image::module-03/acm-search-vms.png[link=self, window=blank, width=80%]
 +
@@ -91,7 +91,7 @@ If you navigate to the YAML tab you can see all of the details of the machine as
 +
 image::module-03/acm-search-vms2.png[link=self, window=blank, width=80%]
 +
-. Navigate to the Related Resources tab to showcase all of the resources that are associated with the *winweb01* virtual machine, this allows for easy troubleshooting when issues come up.
+. Navigate to the Related Resources tab to showcase all of the resources that are associated with the *winweb01-{guid}* virtual machine, this allows for easy troubleshooting when issues come up.
 +
 image::module-03/acm-search-vms3.png[link=self, window=blank, width=80%]
 +
