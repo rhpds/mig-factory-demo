@@ -67,6 +67,7 @@ image::module-02/01_ansible_migration_template_survey.png[]
 
 . Enter the name of the VM you would like to migrate into the Ansible survey.
 +
+[subs="+attributes"]
 ----
 winweb02-{guid}
 ----
