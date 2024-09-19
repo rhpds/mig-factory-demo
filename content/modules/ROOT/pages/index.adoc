@@ -1,5 +1,7 @@
 = OpenShift Virtualization Migration Demo
 
+include::vars.adoc[]
+
 This demo is geared for VMware administrators.
 
 With this in mind, please use a minimum of OpenShift and Kubernetes terminology.
@@ -31,15 +33,15 @@ image::vsphere-launch.png[link=self, window=blank, width=30%]
 +
 image::vsphere-login.png[link=self, window=blank, width=30%]
 
-. Navigate to the link:{rosa_openshift_console_url}[OpenShift Console^]
+. Navigate to the link:{ocp_console_url}[OpenShift Console^]
 +
 image::ocp-login.png[link=self, window=blank, width=50%]
 +
 image::module-01/NN_Virtualization_Console_Login.png[link=self, window=blank, width=30%]
 +
-*Username:* {rosa_openshift_admin_user}
+*Username:* {ocp_admin_username}
 +
-*Password:* {rosa_openshift_admin_password}
+*Password:* {ocp_admin_password}
 
 . Navigate to the link:{aap_controller_web_url}[AAP Controller^]
 +

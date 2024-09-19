@@ -1,5 +1,7 @@
 = VM Migration with the Ansible Automation Platform
 
+include::vars.adoc[]
+
 In the previous module, you saw how easy it is to migrate VMs from VMware to OpenShift Virtualization using the Migration Toolkit for Virtualization (MTV).
 
 While this process is effective and doesn't take too long to complete, how can we speed up the process and achieve scale when needed?
@@ -90,7 +92,7 @@ We can now take a look at the migration job itself and see it running, setting u
 
 *DO:*
 
-. Navigate to the link:{rosa_openshift_console_url}++/k8s/ns/openshift-mtv/forklift.konveyor.io~v1beta1~Plan++[OpenShift Console^]
+. Navigate to the link:{ocp_console_url}++/k8s/ns/openshift-mtv/forklift.konveyor.io~v1beta1~Plan++[OpenShift Console^]
 +
 . Click *Migration* in the left menu, and then click *Plans for Virtualization*.
 . Make sure you're in the `openshift-mtv` namespace.
