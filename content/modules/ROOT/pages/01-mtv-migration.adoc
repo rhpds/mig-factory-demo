@@ -170,12 +170,15 @@ Please fill in your migration plan with the following values:
 * Plan name: *move-webapp-vmware*
 * Target Provider: *Host*
 * Network map: *Pod Networking*
-* Storage map: *ocs-storagecluster-ceph-rbd-virtualization*
+* Storage map: *{ocp_mtv_storage_map}*
+ifeval::["{ocp_mtv_storage_map}" == "ocs-storagecluster-ceph-rbd-virtualization"]
 +
 CAUTION: The Storage Map name is very similar to the default.
 +
 NOTE: Storage and network mappings should be automatically detected from the discovered virtual machines, but make sure to double-check that the correct values are set as described in this guide.
-Make sure to change it to *ocs-storagecluster-ceph-rbd-virtualization*.
+Make sure to change it to *{ocp_mtv_storage_map}*.
+endif::[]
+
 +
 . Click *Create migration plan*.
 +
