@@ -2,11 +2,11 @@
 
 include::vars.adoc[]
 
-In this module, we will demonstrate how to monitor virtual machines using Advanced Cluster Management (ACM) on a ROSA (Red Hat OpenShift Service on AWS) cluster, utilizing a bare metal instance running OpenShift Virtualization.
+In this module, we will demonstrate how to monitor virtual machines using Advanced Cluster Management (ACM) on a managed OpenShift cluster, utilizing bare metal instances running OpenShift Virtualization.
 
 *SAY:*
 
-In this demo, we will use ACM to monitor virtual machines on a ROSA managed cluster that includes a bare metal instance running OpenShift Virtualization.
+In this demo, we will use ACM to monitor virtual machines on a managed cluster that includes bare metal instances running OpenShift Virtualization.
 
 == Overview of ACM and the Managed Cluster
 
@@ -39,16 +39,24 @@ We can have several clusters across different providers and infrastructures.
 *SAY:*
 
 Here, we can see information about the our managed cluster, including its nodes.
+
+ifeval::["{ocp_cloud}" == "rosa"]
 This particular cluster has a *bare metal node*.
 
-image::module-03/ocp-acm-managed-cluster-nodes.png[link=self, window=blank, width=80%]
+image::module-03/ocp-acm-managed-cluster-nodes-rosa.png[link=self, window=blank, width=80%]
+endif::[]
+ifeval::["{ocp_cloud}" == "cnv"]
+This particular cluster runs on bare metal with Container-native Virtualization (CNV).
+
+image::module-03/ocp-acm-managed-cluster-nodes-cnv.png[link=self, window=blank, width=80%]
+endif::[]
 
 *DO:*
 
 . Switch to the managed cluster *(local-cluster)* view.
 . Navigate to the *Compute* and *Nodes* section.
-. Click on the metal node to view its details.
-. Show the Pods running in the `openshift-cnv` namespace.
+. Click on a node to view its details.
+. Look for pods running in the `openshift-cnv` namespace.
 
 *SAY:*
 
@@ -157,105 +165,4 @@ In this module, we demonstrated the centralized view and management capabilities
 
 By leveraging ACM, we can efficiently manage and scale our VM deployments across different infrastructures, ensuring consistency and reducing the potential for human error.
 
-// In this module, we used ACM to deploy a VM on a ROSA hosted control plane managed cluster, leveraging GitOps for automation.
-// This approach provides speed, scale, and consistency while simplifying the management of VMs.
-
-// By using ACM and GitOps, we ensure that our VMs are deployed and managed efficiently, with built-in redundancy and robust monitoring capabilities.
-
 NOTE: Please delete this demo from the Red Hat Demo Platform once you have completed practicing or delivering it to your customer.
-
-
-// == Automating VM Deployment with ACM
-
-// *SAY:*
-
-// We will reproduce the VM deployment experience using ACM and the application engine for a more GitOps-based approach.
-
-// *DO:*
-
-// . Navigate to the *Applications* section in the ACM console.
-// . Highlight the deployed applications, focusing on those using the GitOps model.
-
-// *SAY:*
-
-// In the screenshot, you can see a couple of applications deployed using the GitOps model.
-// This approach allows for easy troubleshooting through the topology view.
-
-// image::module-03/acm_applications.png[link=self, window=blank, width=80%]
-
-// == Creating a New Application with ACM
-
-// *DO:*
-
-// . Click on *Create Application*.
-// . Select *Application Set* and choose the *Pull model* with Argo CD (OpenShift GitOps).
-// . Enter the name for the application, select the GitOps Argo Server, and click *Next*.
-
-// *SAY:*
-
-// We will create a new application set using Argo CD for this deployment.
-// First, we name our application, select the GitOps Argo Server, and proceed.
-
-// *DO:*
-
-// . Select *Git* for the Repo Type.
-// . Enter the URL of the GitHub repository containing the VM configuration.
-
-// *SAY:*
-
-// This repository, forked from engineering, is dedicated to GitOps with OpenShift Virtualization.
-// The key element we need is the VM configuration URL.
-
-// image::module-03/git_repo_url.png[link=self, window=blank, width=80%]
-
-// == Configuring the Application
-
-// *DO:*
-
-// . Paste the following repository *URL*:
-// +
-// {rhacm_gitops_repo}
-// . Select the *Revision* `main` and *Path* `vms`.
-// . Specify the target namespace as `openshift-cnv`.
-// . Add label expression `name` | `equals any of` | `local-cluster`.
-
-// *SAY:*
-
-// We configure the application to deploy into the `openshift-cnv` namespace and place it appropriately into a managed OpenShift cluster.
-// For this demo, we'll use the ROSA hosted control plane cluster.
-
-// *DO:*
-
-// . Click *Submit* to create the application.
-
-// *SAY:*
-
-// With the configuration set, we submit the application and observe the deployment process.
-
-// == Observing the Deployment
-
-// *DO:*
-
-// . Switch to the ROSA console to monitor the VM deployment.
-// . Highlight the VM status as it starts to come up.
-
-// *SAY:*
-
-// On the ROSA console, we can see the VM starting to come up and eventually running.
-// ACM shows the application in a pending state initially, but it will soon reflect the running state.
-
-// *DO:*
-
-// . Switch to the ACM topology view to check the application status.
-
-// *SAY:*
-
-// In the ACM topology view, we can see the VM deployment progress. Once everything is green, the VM is deployed correctly.
-// This view allows us to manage and troubleshoot the application easily.
-
-// == GitOps Resiliency
-
-// *SAY:*
-
-// One of the benefits of deploying VMs as code with GitOps is built-in redundancy.
-// If someone deletes the VM from the ROSA console, ACM will automatically recreate it, ensuring the application remains consistent.

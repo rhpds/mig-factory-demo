@@ -1,10 +1,12 @@
 ifdef::rosa_openshift_console_url[]
+:ocp_cloud: rosa
 :ocp_console_url: {rosa_openshift_console_url}
 :ocp_admin_username: {rosa_openshift_admin_user}
 :ocp_admin_password: {rosa_openshift_admin_password}
 :ocp_mtv_storage_map: ocs-storagecluster-ceph-rbd-virtualization
 endif::rosa_openshift_console_url[]
 ifndef::rosa_openshift_console_url[]
+:ocp_cloud: cnv
 :ocp_console_url: {openshift_cluster_console_url}
 :ocp_admin_username: {openshift_cluster_admin_username}
 :ocp_admin_password: {openshift_cluster_admin_password}
