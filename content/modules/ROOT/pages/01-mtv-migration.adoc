@@ -28,8 +28,8 @@ OpenShift already handles network traffic and load balancing natively, if desire
 
 Now, we will navigate to the VMware vCenter and take note of the names of the virtual machines we want to migrate.
 
-* `database-{openshift_cluster_user_name}`
-* `winweb01-{openshift_cluster_user_name}`
+* *database-{openshift_cluster_user_name}*
+* *winweb01-{openshift_cluster_user_name}*
 
 CAUTION: Only migrate the database and *ONE* of the webservers, so we'll have one free to migrate automatically with Ansible in the next module.
 We cannot migrate a virtual machine twice; mac addresses are not unique.
@@ -60,7 +60,7 @@ Check the operating system details by looking at the virtual machines.
 
 *DO:*
 
-. Click `winweb01-{openshift_cluster_user_name}` in the list of virtual machines.
+. Click *winweb01-{openshift_cluster_user_name}* in the list of virtual machines.
 +
 image::module-01/NN_vSphere_VM_Details.png[link=self, window=blank, width=100%]
 
@@ -144,8 +144,8 @@ The web console displays the concerns for each VM in the provider inventory.
 
 . On the next page select the two VMs you would like to move:
 
-* `database-{openshift_cluster_user_name}`
-* `winweb01-{openshift_cluster_user_name}`
+* *database-{openshift_cluster_user_name}*
+* *winweb01-{openshift_cluster_user_name}*
 
 . You can find the VMs quickly by using the *name:* filter, and providing your username: `{openshift_cluster_user_name}`
 
@@ -189,16 +189,18 @@ image::module-01/NN_Create_Migration_Plan_3.png[link=self, window=blank, width=8
 
 Now we wait a moment for our Migration Plan to be analysed by the system and ready to start the migration.
 
-[Sidebar]
+[sidebar]
 ****
 Sometimes it takes a few minutes to create the plan.
-Things to show while waiting for "Ready"
+
+Things to show while waiting for "Ready":
+
 . The main delay is the validation of the VDDK init image.
 Scroll down to the bottom of the page to show the *Conditions* and progress of plan preparation, and show that the validation of the VDDK init image is in progress.
-image::module-01/NN_validating_vddk_init_image.png[link=self, window=blank, width=50%]
+image:module-01/NN_validating_vddk_init_image.png[link=self, window=blank, width=50%]
 . Click through the tab bar on the top to show details about the required *Resources* for the migration have been computed.
 . Consider ESXi performance during migration:
-.. Click "Storage Maps for virtualization," select the map, and indicate how the `workload_share...` mapping is what matches in VMware.
+.. Click "Storage Maps for virtualization," select the map, and indicate how the *workload_share...* mapping is what matches in VMware.
 .. Click the "VMware provider" and show how easy it is to refer back to your vCenter
 .. Click the "Virtual Machines" tab in the Provider Details page and show how migrations need to be planned for ESXi host capabilities, noting that most often, ESXi hosts are not configured to allow more than one virtual machine to be migrated simultaneously per host.
 Migrating multiple VMs simultaneously from a single ESXi host are quite likely to cause severe performance degradation for the rest of the hosts on that ESXi host.
@@ -277,10 +279,10 @@ First, we need to switch to the project that contains our pre-migrated VMs.
 
 . Click on *Virtualization* in the left menu, and then on *Virtual Machines*.
 
-. Go to the Project: `vmimported`.
+. Go to the Project: *vmimported*.
 
 +
-. Click on the `winweb01-{openshift_cluster_user_name}` VM that is running and click on its name to see the VM details page.
+. Click on the *winweb01-{openshift_cluster_user_name}* VM that is running and click on its name to see the VM details page.
 +
 image::module-01/NN_VM_Name.png[link=self, window=blank, width=40%]
 
@@ -305,7 +307,7 @@ For that, we have already created a "route". You can think of this as similar to
 
 . Click Networking in the left menu, and then click on *Routes*.
 
-. There should only be one route, `route-webapp`
+. There should only be one route, *route-webapp*
 
 . Click the *Location* link and your browser will open with the web application, showing the visitor counter and the web server hostname.
 +
