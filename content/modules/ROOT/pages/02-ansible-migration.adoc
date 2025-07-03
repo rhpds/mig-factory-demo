@@ -33,7 +33,7 @@ The manual process is efficient and only took a few minutes to complete. But how
 * *Username:* {aap_controller_admin_user}
 * *Password:* {aap_controller_admin_password}
 
-. Click on *Templates* in the left menu, and then click on *01 Migrate VMware VMs to OpenShift Virtualization*.
+. On the left menu, click on *Automation Execution* -> *Templates*, and then click on *01 Migrate VMware VMs to OpenShift Virtualization*.
 
 *SAY:*
 
@@ -49,7 +49,7 @@ Other settings handle scale, reporting detail level, and credentials applied to 
 
 *DO:*
 
-. Click *Launch*.
+. Click *Launch Template*.
 
 image::module-02/01_ansible_migration_template_details.png[]
 
@@ -61,7 +61,7 @@ Prepopulated here are the *Name of your provider?* which might be one of several
 
 The *Name of your migration plan*, *storage mapping*, and *network mapping* have been given defaults that you are encouraged to change.
 
-WARNING: We need to choose a VM that has not been migrated yet. In the first module, we manually migrated the `database-{guid}` and `winweb01-{guid}` machines. So here, we will migrate the remaining VM: *winweb02-{guid}*.
+WARNING: We need to choose a VM that has not been migrated yet. In the first module, we manually migrated the database-{openshift_cluster_user_name} and winweb01-{openshift_cluster_user_name} machines. So here, we will migrate the remaining VM: `*winweb02-{openshift_cluster_user_name}*`.
 
 image::module-02/01_ansible_migration_template_survey.png[]
 
@@ -71,14 +71,14 @@ image::module-02/01_ansible_migration_template_survey.png[]
 +
 [subs="+attributes"]
 ----
-winweb02-{guid}
+winweb02-{openshift_cluster_user_name}
 ----
 
 . Click *Next* to continue.
 
 image::module-02/01_ansible_migration_template_preview.png[]
 
-. Click *Launch* to start the migration process.
+. Click *Finish* to start the migration process.
 +
 TIP: The display might not refresh automatically. Refresh your browser to see the Ansible Job Output.
 
@@ -121,7 +121,7 @@ The migration has been been started for us, as well.
 
 *SAY:*
 
-Ansible Automation Platform has started the VM migration plan, and the `winweb02-{guid}` VM migration commences.
+Ansible Automation Platform has started the VM migration plan, and the `winweb02-{openshift_cluster_user_name}` VM migration commences.
 
 If you prefer, you can setup the Ansible job to only prepare the migration process, and rely on you to click the *Start* button.
 

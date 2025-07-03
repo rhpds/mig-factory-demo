@@ -26,11 +26,10 @@ This simple application consists of four virtual machines:
 NOTE: One benefit of migrating to OpenShift is that, if you have a simple loadbalancer configuration, you do not need to migrate the HAproxy VM (which acts as a load balancer).
 OpenShift already handles network traffic and load balancing natively, if desired.
 
-
 Now, we will navigate to the VMware vCenter and take note of the names of the virtual machines we want to migrate.
 
-* `database-{guid}`
-* `winweb01-{guid}`
+* `database-{openshift_cluster_user_name}`
+* `winweb01-{openshift_cluster_user_name}`
 
 CAUTION: Only migrate the database and *ONE* of the webservers, so we'll have one free to migrate automatically with Ansible in the next module.
 We cannot migrate a virtual machine twice; mac addresses are not unique.
@@ -49,7 +48,7 @@ image::vsphere-launch.png[link=self, window=blank, width=30%]
 image::vsphere-login.png[link=self, window=blank, width=30%]
 
 . By default, you'll land in the *Inventory* view at the top of the navigation tree.
-Click the *Workloads* icon and expand the navigation tree until you see the folder that matches your username and the four VMs under it.
+Click the *Workloads* icon and expand the navigation tree until you see the folder *Roadshow* and the four VMs under it.
 Click the *VMs* tab at the top of the screen to view the VM details.
 +
 image::module-01/00_Workload_VM_List.png[link=self, window=blank, width=100%]
@@ -61,7 +60,7 @@ Check the operating system details by looking at the virtual machines.
 
 *DO:*
 
-. Click `winweb01-{guid}` in the list of virtual machines.
+. Click `winweb01-{openshift_cluster_user_name}` in the list of virtual machines.
 +
 image::module-01/NN_vSphere_VM_Details.png[link=self, window=blank, width=100%]
 
@@ -145,8 +144,10 @@ The web console displays the concerns for each VM in the provider inventory.
 
 . On the next page select the two VMs you would like to move:
 
-* `database-{guid}`
-* `winweb01-{guid}`
+* `database-{openshift_cluster_user_name}`
+* `winweb01-{openshift_cluster_user_name}`
+
+. You can find the VMs quickly by using the *name:* filter, and providing your username: `{openshift_cluster_user_name}`
 
 WARNING: The VMs are far too large to migrate in this short demo.
 But that's OK, we have VMs that are already migrated to show after we've kicked off this migration process.
@@ -175,7 +176,7 @@ ifeval::["{ocp_mtv_storage_map}" == "ocs-storagecluster-ceph-rbd-virtualization"
 +
 CAUTION: The Storage Map name is very similar to the default.
 +
-NOTE: Storage and network mappings should be automatically detected from the discovered virtual machines, but make sure to double-check that the correct values are set as described in this guide.
+NOTE: Storage and network mappings should be automatically detected from the discovered virtual machines, but make sure to double-check that the correct values are set as described in this openshift_cluster_user_namee.
 Make sure to change it to *{ocp_mtv_storage_map}*.
 endif::[]
 
@@ -192,8 +193,9 @@ Now we wait a moment for our Migration Plan to be analysed by the system and rea
 ****
 Sometimes it takes a few minutes to create the plan.
 Things to show while waiting for "Ready"
-
-. Scroll down to the bottom of the page to show the *Conditions* and progress of plan preparation.
+. The main delay is the validation of the VDDK init image.
+Scroll down to the bottom of the page to show the *Conditions* and progress of plan preparation, and show that the validation of the VDDK init image is in progress.
+image::module-01/NN_validating_vddk_init_image.png[link=self, window=blank, width=50%]
 . Click through the tab bar on the top to show details about the required *Resources* for the migration have been computed.
 . Consider ESXi performance during migration:
 .. Click "Storage Maps for virtualization," select the map, and indicate how the `workload_share...` mapping is what matches in VMware.
@@ -210,7 +212,8 @@ Let's start our migration!
 +
 image::module-01/NN_Await_Migration_Plan_Ready.png[link=self, window=blank, width=50%]
 +
-. After a few moments the plan will become *Ready*, click on the green "Play" button in the center of the window to start the migration process.
+. After a few moments the plan will become *Ready*.
+Begin the migration by clicking *Start Migration*.
 +
 image::module-01/NN_Migration_Plan_Ready.png[link=self, window=blank, width=30%]
 +
@@ -277,7 +280,7 @@ First, we need to switch to the project that contains our pre-migrated VMs.
 . Go to the Project: `vmimported`.
 
 +
-. Click on the `winweb01-{guid}` VM that is running and click on its name to see the VM details page.
+. Click on the `winweb01-{openshift_cluster_user_name}` VM that is running and click on its name to see the VM details page.
 +
 image::module-01/NN_VM_Name.png[link=self, window=blank, width=40%]
 
@@ -310,7 +313,7 @@ image::module-01/NN_VM_Networking_Routes.png[link=self, window=blank, width=100%
 +
 . The application should look something like this
 +
-NOTE: OpenShift Route is providing load balancing between the *winweb01-{guid}* and *winweb02-{guid}* hosts, so you might see either hostname reported.
+NOTE: OpenShift Route is providing load balancing between the *winweb01-{openshift_cluster_user_name}* and *winweb02-{openshift_cluster_user_name}* hosts, so you might see either hostname reported.
 +
 image::module-01/NN_VM_Migrated_Application.png[link=self, window=blank, width=70%]
 
