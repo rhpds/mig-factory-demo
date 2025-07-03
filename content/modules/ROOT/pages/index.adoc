@@ -28,8 +28,8 @@ image::vsphere-launch.png[link=self, window=blank, width=30%]
 +
 . Click *LAUNCH VSPHERE CLIENT*
 . Login with the following credentials:
-* *User:* {vcenter_full_user}
-* *Password:* {vcenter_password}
+* *User:* `{vcenter_full_user}`
+* *Password:* `{vcenter_password}`
 +
 image::vsphere-login.png[link=self, window=blank, width=30%]
 
@@ -39,14 +39,14 @@ image::ocp-login.png[link=self, window=blank, width=50%]
 +
 image::module-01/NN_Virtualization_Console_Login.png[link=self, window=blank, width=30%]
 +
-*Username:* {ocp_admin_username}
+*Username:* `{ocp_admin_username}`
 +
-*Password:* {ocp_admin_password}
+*Password:* `{ocp_admin_password}`
 
 . Navigate to the link:{aap_controller_web_url}[AAP Controller^]
 +
 . Login as administrator:
-* *Username:* {aap_controller_admin_user}
-* *Password:* {aap_controller_admin_password}
+* *Username:* `{aap_controller_admin_user}`
+* *Password:* `{aap_controller_admin_password}`
 +
 image::module-02/NN_AAP_Console_Login.png[link=self, window=blank, width=30%]

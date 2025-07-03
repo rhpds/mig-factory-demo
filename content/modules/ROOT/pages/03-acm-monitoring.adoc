@@ -56,11 +56,11 @@ endif::[]
 . Switch to the managed cluster *(local-cluster)* view.
 . Navigate to the *Compute* and *Nodes* section.
 . Click on a node to view its details.
-. Look for pods running in the `openshift-cnv` namespace.
+. Look for pods running in the *openshift-cnv* namespace.
 
 *SAY:*
 
-Within the managed cluster, we can see the bare metal node and the various pods in the `openshift-cnv` namespace.
+Within the managed cluster, we can see the bare metal node and the various pods in the *openshift-cnv* namespace.
 This is where all OpenShift Virtualization and host provisioning pods are running.
 
 == Existing Virtual Machines
@@ -124,20 +124,20 @@ image::module-03/observability-Overview.png[link=self, window=blank, width=80%]
 +
 image::module-03/ocp-acm-grafana-top50.png[link=self, window=blank, width=80%]
 +
-. Click on *local-cluster* to open the dashboard. 
+. Click on *local-cluster* to open the dashboard.
 +
 image::module-03/acm-observe-dash.png[link=self, window=blank, width=80%]
 +
 Notice the amount of information thats avaiable here from our cluster APIs, you can see what the top Requests are, and how many resources they consumed, by CPU, memory and much more.
 You can configure alerts from Grafana to be forward to any system that you might currently use for further monitoring and troubleshooting.
 +
-. Let's have a look at the workloads inside our cluster like Virtual Machines, let's Navigate to the side bar and click on *Browse* 
+. Let's have a look at the workloads inside our cluster like Virtual Machines, let's Navigate to the side bar and click on *Browse*
 +
 image::module-03/acm-observe-dash1.png[link=self, window=blank, width=80%]
 +
 . Once there notice all of the out of the box dashboards that are available.
 Custom dashboards can also be created and configure.
-Let's dive deeper into these dashboards and select the *ACM - OpenShift Virtualization Overview*  
+Let's dive deeper into these dashboards and select the *ACM - OpenShift Virtualization Overview*
 +
 image::module-03/acm-observe-dash2.png[link=self, window=blank, width=80%]
 +
@@ -145,7 +145,7 @@ image::module-03/acm-observe-dash2.png[link=self, window=blank, width=80%]
 +
 image::module-03/acm-observe-dash3.png[link=self, window=blank, width=80%]
 +
-Feel free to explore around the multiple Grafana dashboards to familiarize yourself with whats included out of the box. 
+Feel free to explore around the multiple Grafana dashboards to familiarize yourself with whats included out of the box.
 
 *SAY:*
 
