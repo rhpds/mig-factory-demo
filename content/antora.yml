@@ -1,12 +1,13 @@
 ---
 name: modules
 title: OpenShift Virtualization Demo
-version: main
+version: master
 nav:
   - modules/ROOT/nav.adoc
 
 asciidoc:
   attributes:
+    page-pagination: true
     # see vars.adoc for 'openshift' variables. Do not uncomment these.
     # openshift_cluster_admin_password: placeholder_openshift_cluster_admin_password
     # openshift_cluster_admin_username: placeholder_openshift_cluster_admin_username
