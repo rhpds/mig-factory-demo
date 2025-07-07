@@ -88,9 +88,9 @@ Let's have a look at them now.
 image::ocp-local-cluster.png[link=self, window=blank, width=70%]
 +
 . Go to *Migration* -> *Providers for virtualization*
-
++
 image::module-01/NN_Migration_Providers.png[link=self, window=blank, width=80%]
-
++
 [Sidebar]
 ****
 If you do not see the Providers, select the *openshift-mtv* Project by:
@@ -98,7 +98,7 @@ If you do not see the Providers, select the *openshift-mtv* Project by:
 . Click the *Projects* dropdown menu
 . Enter `mtv` into the search box
 . Enable *Show default projects*
-
++
 image::module-01/select-project-openshift-mtv.png[link=self, window=blank, width=30%]
 ****
 
