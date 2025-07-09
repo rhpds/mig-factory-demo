@@ -28,8 +28,8 @@ OpenShift already handles network traffic and load balancing natively, if desire
 
 Now, we will navigate to the VMware vCenter and take note of the names of the virtual machines we want to migrate.
 
-* *database-{openshift_cluster_user_name}*
-* *winweb01-{openshift_cluster_user_name}*
+* *database-user1*
+* *winweb01-user1*
 
 CAUTION: Only migrate the database and *ONE* of the webservers, so we'll have one free to migrate automatically with Ansible in the next module.
 We cannot migrate a virtual machine twice; mac addresses are not unique.
@@ -60,7 +60,7 @@ Check the operating system details by looking at the virtual machines.
 
 *DO:*
 
-. Click *winweb01-{openshift_cluster_user_name}* in the list of virtual machines.
+. Click *winweb01-user1* in the list of virtual machines.
 +
 image::module-01/NN_vSphere_VM_Details.png[link=self, window=blank, width=100%]
 
@@ -144,10 +144,10 @@ The web console displays the concerns for each VM in the provider inventory.
 
 . On the next page select the two VMs you would like to move:
 
-* *database-{openshift_cluster_user_name}*
-* *winweb01-{openshift_cluster_user_name}*
+* *database-user1*
+* *winweb01-user1*
 
-. You can find the VMs quickly by using the *name:* filter, and providing your username: `{openshift_cluster_user_name}`
+. You can find the VMs quickly by using the *name:* filter, and providing your username: `user1`
 
 WARNING: The VMs are far too large to migrate in this short demo.
 But that's OK, we have VMs that are already migrated to show after we've kicked off this migration process.
@@ -282,7 +282,7 @@ First, we need to switch to the project that contains our pre-migrated VMs.
 . Go to the Project: *vmimported*.
 
 +
-. Click on the *winweb01-{openshift_cluster_user_name}* VM that is running and click on its name to see the VM details page.
+. Click on the *winweb01-user1* VM that is running and click on its name to see the VM details page.
 +
 image::module-01/NN_VM_Name.png[link=self, window=blank, width=40%]
 
@@ -315,7 +315,7 @@ image::module-01/NN_VM_Networking_Routes.png[link=self, window=blank, width=100%
 +
 . The application should look something like this
 +
-NOTE: OpenShift Route is providing load balancing between the *winweb01-{openshift_cluster_user_name}* and *winweb02-{openshift_cluster_user_name}* hosts, so you might see either hostname reported.
+NOTE: OpenShift Route is providing load balancing between the *winweb01-user1* and *winweb02-user1* hosts, so you might see either hostname reported.
 +
 image::module-01/NN_VM_Migrated_Application.png[link=self, window=blank, width=70%]
 

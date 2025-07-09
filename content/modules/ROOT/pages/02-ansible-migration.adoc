@@ -61,7 +61,7 @@ Prepopulated here are the *Name of your provider?* which might be one of several
 
 The *Name of your migration plan*, *storage mapping*, and *network mapping* have been given defaults that you are encouraged to change.
 
-WARNING: We need to choose a VM that has not been migrated yet. In the first module, we manually migrated the database-{openshift_cluster_user_name} and winweb01-{openshift_cluster_user_name} machines. So here, we will migrate the remaining VM: *winweb02-{openshift_cluster_user_name}*.
+WARNING: We need to choose a VM that has not been migrated yet. In the first module, we manually migrated the database-user1 and winweb01-user1 machines. So here, we will migrate the remaining VM: *winweb02-user1*.
 
 image::module-02/01_ansible_migration_template_survey.png[]
 
@@ -71,7 +71,7 @@ image::module-02/01_ansible_migration_template_survey.png[]
 +
 [subs="+attributes"]
 ----
-winweb02-{openshift_cluster_user_name}
+winweb02-user1
 ----
 
 . Click *Next* to continue.
@@ -121,7 +121,7 @@ The migration has been been started for us, as well.
 
 *SAY:*
 
-Ansible Automation Platform has started the VM migration plan, and the *winweb02-{openshift_cluster_user_name}* VM migration commences.
+Ansible Automation Platform has started the VM migration plan, and the *winweb02-user1* VM migration commences.
 
 If you prefer, you can setup the Ansible job to only prepare the migration process, and rely on you to click the *Start* button.
 
