@@ -14,14 +14,14 @@ In this demo, we will use ACM to monitor virtual machines on a managed cluster t
 
 . Navigate to the link:{ocp_console_url}[OpenShift Console^].
 . If you haven't already, login:
-* *User:* {ocp_admin_username}
-* *Password:* {ocp_admin_password}
+* *User:* `{ocp_admin_username}`
+* *Password:* `{ocp_admin_password}`
 . Ensure *All Clusters* is selected at the top left to activate the *ACM Console*.
 +
 image::module-03/ocp-all-clusters.png[link=self, window=blank, width=50%]
 +
 . Click *Home* and then *Overview* to see the ACM dashboard.
-. Select fleet view at the top left.
+. Select *fleet view* at the top left.
 +
 image::module-03/ocp-acm-overview-fleet.png[link=self, window=blank, width=80%]
 
@@ -68,7 +68,7 @@ This is where all OpenShift Virtualization and host provisioning pods are runnin
 *DO:*
 
 . Click on the *Virtualization* and then *VirtualMachines*.
-. Select "All Projects" at the top.
+. Select *All Projects* at the top.
 . Highlight the existing VMs.
 +
 image::module-03/ocp-virtualization-vms.png[link=self, window=blank, width=80%]
@@ -88,20 +88,22 @@ Let's showcase how the Search engine operates in ACM.
 *DO:*
 
 . Navigate to the *Search* screen in ACM.
+.. From the top bar, select *All Clusters*
+.. On the left, click *Home* and then *Search*.
 . Setup the following filters in your search *kind:VirtualMachine*.
 . You should see the Virtual Machines, including those you imported in the earlier steps (if applicable).
-. Let's navigate deeper. Click on the *winweb01-{guid}*.
+. Let's navigate deeper. Click on the *winweb01-user1*.
 +
 image::module-03/acm-search-vms.png[link=self, window=blank, width=80%]
 +
 image::module-03/acm-search-vms1.png[link=self, window=blank, width=80%]
 +
 Notice all of the details of the Virtual Machine, here we can see when it was created, what Labels are appiled, what features of this virtual machine are enabled.
-If you navigate to the YAML tab you can see all of the details of the machine as code, you can use this to deploy VMs as code from within ACM, making it super easy to scale out your environment.
+If you *navigate to the YAML tab* you can see all of the details of the machine as code, you can use this to deploy VMs as code from within ACM, making it super easy to scale out your environment.
 +
 image::module-03/acm-search-vms2.png[link=self, window=blank, width=80%]
 +
-. Navigate to the Related Resources tab to showcase all of the resources that are associated with the *winweb01-{guid}* virtual machine, this allows for easy troubleshooting when issues come up.
+. Navigate to the Related Resources tab to showcase all of the resources that are associated with the *winweb01-user1* virtual machine, this allows for easy troubleshooting when issues come up.
 +
 image::module-03/acm-search-vms3.png[link=self, window=blank, width=80%]
 +
@@ -115,12 +117,15 @@ This is especially useful for monitoring and troubleshooting, now let's dive dee
 *DO:*
 
 . Get back to ACM, in *Infrastructure* and *Clusters*. Click on the *Grafana* link.
+.. You may have to log in, using the OpenShift cluster-admin credentials, *user:* `{ocp_admin_username}` *password:* `{ocp_admin_password}`
 +
 image::module-03/ocp-acm-grafana-link.png[link=self, window=blank, width=80%]
 +
 image::module-03/observability-Overview.png[link=self, window=blank, width=80%]
 +
-. Click on *Top 50 Max Latency API Server* title followed by *View*.
+ifeval::["{ocp_cloud}" == "cnv"]
+. You will see data in the *Top 50 Max Latency API Server* title followed by *View*.
+Click on *View*.
 +
 image::module-03/ocp-acm-grafana-top50.png[link=self, window=blank, width=80%]
 +
@@ -131,19 +136,32 @@ image::module-03/acm-observe-dash.png[link=self, window=blank, width=80%]
 Notice the amount of information thats avaiable here from our cluster APIs, you can see what the top Requests are, and how many resources they consumed, by CPU, memory and much more.
 You can configure alerts from Grafana to be forward to any system that you might currently use for further monitoring and troubleshooting.
 +
-. Let's have a look at the workloads inside our cluster like Virtual Machines, let's Navigate to the side bar and click on *Browse*
+endif::[]
+. Look at the workloads inside our cluster like Virtual Machines.
+Navigate to the side bar and click on *Browse*.
 +
 image::module-03/acm-observe-dash1.png[link=self, window=blank, width=80%]
 +
 . Once there notice all of the out of the box dashboards that are available.
 Custom dashboards can also be created and configure.
-Let's dive deeper into these dashboards and select the *ACM - OpenShift Virtualization Overview*
+Let's dive deeper into these dashboards and select the *ACM - OpenShift Virtualization Overview*.
 +
 image::module-03/acm-observe-dash2.png[link=self, window=blank, width=80%]
 +
 . This Dashboard showcases the Health of the *OpenShift Virtualization Operator* - kubevirt - and what resources - virtual machines - are available and and what the state is.
 +
 image::module-03/acm-observe-dash3.png[link=self, window=blank, width=80%]
++
+. Now look at optimizing the resources used by our Virtual Machines.
+Click back to the *Browse* dashboard and select *ACM - OpenShift Virtualization Resource Optimization / Cluster*
++
+image::module-03/ocp-acm-grafana-resource-optimization.png[link=self, window=blank, width=80%]
++
+. This dashboard provides a detailed view of the resource usage and optimization for the cluster.
+You can select a specific namespace to view the resource usage and optimization for that namespace.
+Scroll down to find he *openshift-mtv* namespace that received the migrating virtual machines, and talk about watching the resource usage and optimization for the namespace as virtual machines migrate.
++
+image::module-03/ocp-acm-grafana-resource-optimization-namespace.png[link=self, window=blank, width=80%]
 +
 Feel free to explore around the multiple Grafana dashboards to familiarize yourself with whats included out of the box.
 

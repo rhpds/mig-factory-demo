@@ -30,8 +30,8 @@ The manual process is efficient and only took a few minutes to complete. But how
 
 . Navigate to the link:{aap_controller_web_url}[AAP Controller^]
 .. Log in if necessary:
-* *Username:* {aap_controller_admin_user}
-* *Password:* {aap_controller_admin_password}
+* *Username:* `{aap_controller_admin_user}`
+* *Password:* `{aap_controller_admin_password}`
 
 . On the left menu, click on *Automation Execution* -> *Templates*, and then click on *01 Migrate VMware VMs to OpenShift Virtualization*.
 
