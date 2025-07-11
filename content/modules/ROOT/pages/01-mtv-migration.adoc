@@ -40,10 +40,10 @@ We cannot migrate a virtual machine twice; mac addresses are not unique.
 +
 image::vsphere-launch.png[link=self, window=blank, width=30%]
 +
-. If necesary, click *LAUNCH VSPHERE CLIENT*
+. Click *LAUNCH VSPHERE CLIENT*
 . Login with the following credentials:
-* *User:* {vcenter_full_user}
-* *Password:* {vcenter_password}
+* *User:* `{vcenter_full_user}`
+* *Password:* `{vcenter_password}`
 +
 image::vsphere-login.png[link=self, window=blank, width=30%]
 
