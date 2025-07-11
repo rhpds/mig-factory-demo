@@ -13,9 +13,6 @@ In this demo, we will use ACM to monitor virtual machines on a managed cluster t
 *DO:*
 
 . Navigate to the link:{ocp_console_url}[OpenShift Console^].
-. If you haven't already, login:
-* *User:* `{ocp_admin_username}`
-* *Password:* `{ocp_admin_password}`
 . Ensure *All Clusters* is selected at the top left to activate the *ACM Console*.
 +
 image::module-03/ocp-all-clusters.png[link=self, window=blank, width=50%]
