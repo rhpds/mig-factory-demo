@@ -66,7 +66,7 @@ image::module-01/NN_vSphere_VM_Details.png[link=self, window=blank, width=100%]
 
 CAUTION:  *Do not start these VMware VMs.*
 We are not supporting "warm" migrations in this demo.
-If your customer wants you to start and investigate these VMS, you may do so but *must* stop the VMs before beginning migration.
+In all likelyhood, we have removed the permissions to power on these VMs.
 
 == Migration Toolkit for Virtualization
 
